@@ -3,9 +3,9 @@ This is an ongoing group project of mine to create an efficient system of elevat
 
 Steps:
 1. Install packages by running these commands on your terminal
-a. pip install ultralytics
-b. pip install supervision
-c. pip install streamlit
+pip install ultralytics
+pip install supervision
+pip install streamlit
 3. Run this command to run the app
    streamlit run Elevator_People_Prediciton.py
 4. Upload an image containing a person to the app and watch it do it's work :)
