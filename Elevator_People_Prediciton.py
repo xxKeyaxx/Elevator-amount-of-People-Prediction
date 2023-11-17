@@ -31,11 +31,7 @@ if uploaded_file is not None:
     result = list(result)[0]
     detections = sv.Detections.from_yolov8(result)
     detections = detections[(detections.class_id == 0) & (detections.confidence > 0.2)]
-    # bounding_box_annotator = sv.LineZoneAnnotator()
-    # annotated_frame = bounding_box_annotator.annotate(
-    #     scene=image,
-    #     detections=detections
-    # )
+    
     box_annotator = sv.BoxAnnotator()
     image = box_annotator.annotate(scene=image, detections=detections)
     image = convert_to_streamlit_format(image)
