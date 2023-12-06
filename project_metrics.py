@@ -22,12 +22,6 @@ for image_path in image_paths:
     detections = detections[(detections.class_id == 0) & (detections.confidence > 0.3)]
     prediction.append(len(detections))
 
-
-# accuracy = accuracy_score(labels, prediction)
-# precision = precision_score(labels, prediction)
-# recall = recall_score(labels, prediction)
-# f1_score = f1_score(labels, prediction)
-
 accuracy = accuracy_score(labels, prediction)
 precision = precision_score(labels, prediction, average='weighted', zero_division=1)
 recall = recall_score(labels, prediction, average='weighted', zero_division=1)
