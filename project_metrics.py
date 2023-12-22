@@ -1,7 +1,8 @@
 import pandas as pd
 from ultralytics import YOLO
 import supervision as sv
-from sklearn.metrics import precision_score, recall_score, accuracy_score, f1_score, confusion_matrix, ConfusionMatrixDisplay
+from sklearn.metrics import precision_score, recall_score, accuracy_score, f1_score, confusion_matrix, ConfusionMatrixDisplay, mean_absolute_error, mean_squared_error, r2_score
+import numpy as np
 import matplotlib.pyplot as plt
 from PIL import Image
 
@@ -34,10 +35,31 @@ precision = precision_score(labels, prediction, average='weighted', zero_divisio
 recall = recall_score(labels, prediction, average='weighted', zero_division=1)
 weighted_f1 = f1_score(labels, prediction, average='weighted', zero_division=1)
 
+
+print("Classification Metrics:")
 print("Accuracy:", accuracy)
 print("Weighted-average Precision:", precision)
 print("Weighted-average Recall:", recall)
 print("Weighted-average F1-score:", weighted_f1)
+
+print()
+print("Regression Metrics:")
+
+# Compute Mean Absolute Error (MAE)
+mae = mean_absolute_error(labels, prediction)
+print(f"Mean Absolute Error (MAE): {mae}")
+
+# Compute Mean Squared Error (MSE)
+mse = mean_squared_error(labels, prediction)
+print(f"Mean Squared Error (MSE): {mse}")
+
+# Compute Root Mean Squared Error (RMSE)
+rmse = np.sqrt(mse)
+print(f"Root Mean Squared Error (RMSE): {rmse}")
+
+# Compute R^2 score
+r2 = r2_score(labels, prediction)
+print(f"R^2 Score: {r2}")
 
 confusion_matrix = confusion_matrix(labels, prediction)
 disp = ConfusionMatrixDisplay(confusion_matrix)
