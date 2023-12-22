@@ -3,12 +3,14 @@ This is an ongoing group project of mine to create an efficient system of elevat
 
 Steps for running main file:
 1. Install packages by running these commands on your terminal\
-   ```pip install ultralytics\
-   pip install supervision\
-   pip install streamlit```
+   ```
+   pip install ultralytics
+   pip install supervision
+   pip install streamlit
+   ```
 
 2. Run this command to run the app\
-   `streamlit run Elevator_People_Prediciton.py`
+   ```streamlit run Elevator_People_Prediciton.py```
    
 3. Upload an image containing a person to the app and watch it do its work :)
 
