@@ -10,8 +10,10 @@ Steps for running main file:
    ```
 
 2. Run this command to run the app\
-   ```streamlit run Elevator_People_Prediciton.py```
+   ```
+   streamlit run Elevator_People_Prediciton.py
+   ```
    
-3. Upload an image containing a person to the app and watch it do its work :)
+4. Upload an image containing a person to the app and watch it do its work :)
 
 Alternatively, if you want to evaluate the model using the dataset that I've provided you can run the project metrics.py file
